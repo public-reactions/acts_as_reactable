@@ -1,6 +1,6 @@
 # ActsAsReactable
 
-![main build](https://github.com/public-reactions/acts_as_reactable/actions/workflows/main.yml/badge.svg)
+![build](https://github.com/public-reactions/acts_as_reactable/actions/workflows/main.yml/badge.svg)
 
 TODO: Add badge for gem
 TODO: Add badge for coverage
