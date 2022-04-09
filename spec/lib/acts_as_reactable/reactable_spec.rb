@@ -31,17 +31,54 @@ describe ActsAsReactable::Reactable do
     end
 
     describe "updating reaction" do
-      it "updates existing reaction" do
-        raise 'unimplemented'
+      before do
+        post.update_reaction_from(user, "😀")
       end
 
-      it "deletes reaction with empty emoji" do
-        raise 'unimplemented'
+      it "updates existing reaction" do
+        expect {
+          post.update_reaction_from(user, "😺")
+          reaction = ActsAsReactable::Reaction.last
+
+          expect(reaction.persisted?).to be true
+          expect(reaction.emoji).to eq "😺"
+        }.to change(ActsAsReactable::Reaction, :count).by(0)
       end
 
       it "doesn't update existing reaction with invalid input" do
-        raise 'unimplemented'
+        expect {
+          post.update_reaction_from(user, "not a emoji")
+          reaction = ActsAsReactable::Reaction.last
+
+          expect(reaction.persisted?).to be true
+          expect(reaction.emoji).to eq "😀"
+        }.to change(ActsAsReactable::Reaction, :count).by(0)
       end
+
+      it "deletes reaction with empty emoji" do
+        expect {
+          expect(post).to receive(:destroy_reaction_from).and_call_original.with(user)
+          post.update_reaction_from(user)
+        }.to change(ActsAsReactable::Reaction, :count).by(-1)
+      end
+    end
+  end
+
+  describe "#destroy_reaction_from" do
+    before do
+      post.update_reaction_from(user, "😀")
+    end
+
+    it "deletes reaction with empty emoji" do
+      expect(post.reactions.count).to eq 1
+      expect(user.reactions.count).to eq 1
+
+      expect {
+        post.update_reaction_from(user)
+
+        expect(post.reactions.count).to eq 0
+        expect(user.reactions.count).to eq 0
+      }.to change(ActsAsReactable::Reaction, :count).by(-1)
     end
   end
 end

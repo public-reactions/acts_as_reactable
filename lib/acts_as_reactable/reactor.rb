@@ -8,7 +8,7 @@ module ActsAsReactable
 
     module ClassMethod
       def acts_as_reactor
-        has_many :reactions, as: :reactor
+        has_many :reactions, class_name: "ActsAsReactable::Reaction", as: :reactor, dependent: :delete_all
       end
     end
   end
