@@ -1,13 +1,46 @@
 # frozen_string_literal: true
 
-RSpec.configure do |config|
-  # Enable flags like --only-failures and --next-failure
-  config.example_status_persistence_file_path = ".rspec_status"
+$LOAD_PATH << File.join(File.dirname(__FILE__), "..", "lib")
 
-  # Disable RSpec exposing methods globally on `Module` and `main`
-  config.disable_monkey_patching!
+require "sqlite3"
+require "simplecov"
+require "factory_bot"
+require "acts_as_reactable"
 
-  config.expect_with :rspec do |c|
-    c.syntax = :expect
+Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
+
+SimpleCov.start
+
+ActiveRecord::Base.establish_connection(adapter: "sqlite3", database: ":memory:")
+
+ActiveRecord::Schema.define(version: 1) do
+  create_table :users do |t|
+    t.timestamps
   end
+
+  create_table :posts do |t|
+    t.references :user, foreign_key: true
+    t.timestamps
+  end
+
+  create_table :reactions do |t|
+    t.references :reactable, polymorphic: true, null: false
+    t.references :reactor, polymorphic: true, null: false
+
+    t.string :emoji, null: false, index: true
+
+    t.timestamps
+  end
+end
+
+class User < ActiveRecord::Base
+  has_many :posts
+
+  acts_as_reactor
+end
+
+class Post < ActiveRecord::Base
+  belongs_to :user
+
+  acts_as_reactable
 end

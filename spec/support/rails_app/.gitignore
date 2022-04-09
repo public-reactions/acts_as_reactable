@@ -1,5 +1,0 @@
-/db/*.sqlite3
-/tmp/*
-!/tmp/.keep
-/log/*
-!/log/.keep
