@@ -5,8 +5,8 @@ require_relative "lib/acts_as_reactable/version"
 Gem::Specification.new do |spec|
   spec.name = "acts_as_reactable"
   spec.version = ActsAsReactable::VERSION
-  spec.authors = ["admin@public-reactions.com"]
-  spec.email = ["admin@public-reactions.com"]
+  spec.authors = ["contact@public-reactions.com"]
+  spec.email = ["contact@public-reactions.com"]
 
   spec.summary = "Emoji reactions for rails"
   spec.description = "Emoji reactions for rails"
