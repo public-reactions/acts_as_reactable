@@ -41,6 +41,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "factory_bot", "~> 6.0"
   spec.add_development_dependency "sqlite3"
   spec.add_development_dependency "simplecov"
+  spec.add_development_dependency "simplecov-cobertura"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html

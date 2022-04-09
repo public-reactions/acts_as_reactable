@@ -4,11 +4,13 @@ $LOAD_PATH << File.join(File.dirname(__FILE__), "..", "lib")
 
 require "sqlite3"
 require "simplecov"
+require "simplecov-cobertura"
 require "factory_bot"
 require "acts_as_reactable"
 
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 
+SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
 SimpleCov.start
 
 ActiveRecord::Base.establish_connection(adapter: "sqlite3", database: ":memory:")
