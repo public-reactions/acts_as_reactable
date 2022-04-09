@@ -1,6 +1,7 @@
 # ActsAsReactable
 
 ![build](https://github.com/public-reactions/acts_as_reactable/actions/workflows/main.yml/badge.svg)
+[![codecov](https://codecov.io/gh/public-reactions/acts_as_reactable/branch/main/graph/badge.svg?token=OVDCJIQAFN)](https://codecov.io/gh/public-reactions/acts_as_reactable)
 
 TODO: Add badge for gem
 TODO: Add badge for coverage
