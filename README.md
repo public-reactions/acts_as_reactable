@@ -1,11 +1,9 @@
 # ActsAsReactable
 
+![main build](https://github.com/public-reactions/acts_as_reactable/actions/workflows/main.yml/badge.svg)
+
 TODO: Add badge for gem
 TODO: Add badge for coverage
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/acts_as_reactable`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -19,7 +17,23 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-TODO: Write usage instructions here
+### 1. create the Reaction model
+
+### 2. annotate reactable and reactor models
+
+### 3. creating/updating reactions
+
+### 4. deleting reactions
+
+### 5. aggregate/summary of reactions
+
+## FAQ
+
+### Why saving the emoji character instead of "smily_face"
+
+- Technically, there's no concrete name/key/id for emoji (and modifiers like skin tone). The [CLDR short names](https://unicode.org/emoji/format.html#col-name) "vary by language" and "may change".
+- It's easier to store since any modern database supports 
+- It's easier to validate with libs/regex (e.g. [unicode-emoji](https://github.com/janlelis/unicode-emoji))
 
 ## Development
 
