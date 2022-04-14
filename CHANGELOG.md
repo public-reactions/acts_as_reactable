@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+### [0.2.5](https://github.com/public-reactions/acts_as_reactable/compare/v0.2.4...v0.2.5) (2022-04-14)
+
+
+### Bug Fixes
+
+* release workflow missing checkout; bumped version only to test workflow ([a9a5705](https://github.com/public-reactions/acts_as_reactable/commit/a9a570528875fc376c0639fad4d377ae516af115))
+* update lockfile ([c6436a3](https://github.com/public-reactions/acts_as_reactable/commit/c6436a3b982c6a39f681c3847c03ffc65d93bccc))
+
 ### [0.2.4](https://github.com/public-reactions/acts_as_reactable/compare/v0.2.3...v0.2.4) (2022-04-14)
 
 
