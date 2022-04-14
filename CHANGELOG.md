@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+### [0.2.2](https://github.com/public-reactions/acts_as_reactable/compare/v0.2.1...v0.2.2) (2022-04-14)
+
+
+### Bug Fixes
+
+* dummy fix to test release flow ([fe2bf14](https://github.com/public-reactions/acts_as_reactable/commit/fe2bf14a9e47d28a3b7d212ba031c38a35476c77))
+
 ### [0.2.1](https://github.com/public-reactions/acts_as_reactable/compare/v0.2.0...v0.2.1) (2022-04-14)
 
 
