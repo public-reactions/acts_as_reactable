@@ -20,7 +20,9 @@ jobs:
       # if a release was created
       #
 
-      # setup ruby and bundle
+      # checkout code, setup ruby and bundle
+      - uses: actions/checkout@v2
+        if: ${{ steps.release.outputs.release_created }}
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ruby # latest stable cruby
