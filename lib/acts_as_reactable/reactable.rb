@@ -28,6 +28,8 @@ module ActsAsReactable
           reaction = reactions.find_or_initialize_by(reactor: reactor)
           reaction.emoji = emoji
           reaction.save
+
+          reaction
         end
       end
     end

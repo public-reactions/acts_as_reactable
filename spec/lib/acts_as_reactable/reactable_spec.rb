@@ -6,9 +6,10 @@ describe ActsAsReactable::Reactable do
 
   describe "#update_reaction_from" do
     describe "creating reaction" do
-      it "creates a reaction" do
+      it "creates (and returns) one reaction" do
         expect {
-          post.update_reaction_from(user, "😀")
+          reaction = post.update_reaction_from(user, "😀")
+          expect(reaction).to be_a(ActsAsReactable::Reaction)
         }.to change(ActsAsReactable::Reaction, :count).by(1)
       end
 
