@@ -13,4 +13,4 @@
 .DS_Store
 
 # otherwise the version in lockfile will mismatch the updated one during the release flow
-/Gemfile.lock
+# /Gemfile.lock
