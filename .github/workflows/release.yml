@@ -2,9 +2,9 @@ on:
   push:
     branches:
       - main
-name: release-please
+name: release
 jobs:
-  release-please:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v3
