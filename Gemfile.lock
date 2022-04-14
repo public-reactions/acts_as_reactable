@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    acts_as_reactable (0.1.0)
+    acts_as_reactable (0.2.0)
       activerecord (>= 6.0)
       unicode-emoji (~> 3.1)
 

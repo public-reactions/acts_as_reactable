@@ -23,7 +23,7 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ruby # latest stable cruby
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          # bundler-cache: true # runs 'bundle install' and caches installed gems automatically
         if: ${{ steps.release.outputs.release_created }}
       - run: bundle install
         if: ${{ steps.release.outputs.release_created }}
