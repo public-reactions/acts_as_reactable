@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+### [0.2.4](https://github.com/public-reactions/acts_as_reactable/compare/v0.2.3...v0.2.4) (2022-04-14)
+
+
+### Bug Fixes
+
+* no longer ignore Gemfile.lock ([355811e](https://github.com/public-reactions/acts_as_reactable/commit/355811e0135177918480512919ebfdf5cccef221))
+* update Gemfile.lock ([a586fa4](https://github.com/public-reactions/acts_as_reactable/commit/a586fa48cc2e38568534224f8a75fd275a1b2966))
+
 ### [0.2.3](https://github.com/public-reactions/acts_as_reactable/compare/v0.2.2...v0.2.3) (2022-04-14)
 
 
