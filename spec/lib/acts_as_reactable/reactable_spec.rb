@@ -75,7 +75,7 @@ describe ActsAsReactable::Reactable do
       expect(user.reactions.count).to eq 1
 
       expect {
-        post.update_reaction_from(user)
+        post.destroy_reaction_from(user)
 
         expect(post.reactions.count).to eq 0
         expect(user.reactions.count).to eq 0
