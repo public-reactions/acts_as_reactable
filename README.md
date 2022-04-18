@@ -88,7 +88,7 @@ ActsAsReactable::Reaction.where(reactable: reactor).group(:emoji).order('count_i
 
 ### Why saving the emoji character instead of "smily_face"
 
-- Technically, there's no concrete name/key/id for emoji (and modifiers like skin tone). The [CLDR short names](https://unicode.org/emoji/format.html#col-name) "vary by language" and "may change", besides, are those names case sensitive? Should we use `-`, `_` or ` ` as divider? How to append tune variant? There are several error prone decisions to make.
+- Technically, there's no concrete name/key/id for emoji (and modifiers like skin tone). The [CLDR short names](https://unicode.org/emoji/format.html#col-name) "vary by language" and "may change", besides, are those names case sensitive? Should we use `-`, `_` or ` ` as divider? How to append tone variant? There are several error prone decisions to make.
 - It's easier to store since all modern database supports encodings (e.g. UTF-8) for unicode characters.
 - It's easy to validate with libs/regex (e.g. [unicode-emoji](https://github.com/janlelis/unicode-emoji)).
 - It takes less size on disk to store (and presumably less time to index/sort/match) one unicode character 😂 (4 bytes) than `face with tears of joy` (22 bytes). [This is a great article to explain how utf-8 works](https://sethmlarson.dev/blog/utf-8)
