@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+### [0.2.8](https://github.com/public-reactions/acts_as_reactable/compare/v0.2.7...v0.2.8) (2022-04-18)
+
+
+### Bug Fixes
+
+* remove needless validators ([2b6aef3](https://github.com/public-reactions/acts_as_reactable/commit/2b6aef3379da7d3aa9a969440720b04d005a78af))
+* **spec:** test spec for #destroy_reaction_from ([ef79759](https://github.com/public-reactions/acts_as_reactable/commit/ef79759ce20109299e8bffa78ad4b7f0784510e0))
+
 ### [0.2.7](https://github.com/public-reactions/acts_as_reactable/compare/v0.2.6...v0.2.7) (2022-04-14)
 
 
