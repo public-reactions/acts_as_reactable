@@ -86,7 +86,7 @@ ActsAsReactable::Reaction.where(reactable: reactor).group(:emoji).order('count_i
 
 ## FAQ
 
-### Why saving the emoji character instead of "smily_face"
+### Why saving "😂" instead of "face_with_tears_of_joy"
 
 - Technically, there's no concrete name/key/id for emoji (and modifiers like skin tone). The [CLDR short names](https://unicode.org/emoji/format.html#col-name) "vary by language" and "may change", besides, are those names case sensitive? Should we use `-`, `_` or ` ` as divider? How to append tone variant? There are several error prone decisions to make.
 - It's easier to store since all modern database supports encodings (e.g. UTF-8) for unicode characters.
@@ -101,7 +101,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/acts_as_reactable. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/acts_as_reactable/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/public-reactions/acts_as_reactable. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/acts_as_reactable/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
