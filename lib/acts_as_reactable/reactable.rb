@@ -25,10 +25,7 @@ module ActsAsReactable
             return destroy_reaction_from(reactor)
           end
 
-          reaction = reactions.find_or_initialize_by(reactor: reactor)
-          reaction.emoji = emoji
-          reaction.save
-
+          reaction = reactions.where({reactor: reactor, emoji: emoji}).first_or_create
           reaction
         end
       end

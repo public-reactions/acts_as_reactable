@@ -43,7 +43,7 @@ describe ActsAsReactable::Reactable do
 
           expect(reaction.persisted?).to be true
           expect(reaction.emoji).to eq "😺"
-        }.to change(ActsAsReactable::Reaction, :count).by(0)
+        }.to change(ActsAsReactable::Reaction, :count).by(1)
       end
 
       it "doesn't update existing reaction with invalid input" do
