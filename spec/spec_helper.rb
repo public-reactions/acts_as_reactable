@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 1) do
     t.references :reactor, polymorphic: true, null: false
     t.string :emoji, null: false, index: true
     t.timestamps
-    t.index [:reactable_type, :reactable_id, :reactor_type, :reactor_id, :emoji], unique: true, name: 'index_reactions_on_reactable_and_reactor_and_emoji'
+    t.index [:reactable_type, :reactable_id, :reactor_type, :reactor_id, :emoji], unique: true, name: "index_reactions_on_reactable_and_reactor_and_emoji"
   end
 end
 
