@@ -20,24 +20,23 @@ If bundler is not being used to manage dependencies, install the gem by executin
 ### 1. create the Reaction model
 
 ```ruby
-# with default bigint id
+# rails g migration create_reactions
+
+# with default id type
 create_table :reactions do |t|
   t.references :reactable, polymorphic: true, null: false
   t.references :reactor, polymorphic: true, null: false
-
   t.string :emoji, null: false, index: true
-
   t.timestamps
+
+  t.index [:reactable_type, :reactable_id, :reactor_type, :reactor_id, :emoji], unique: true, name: 'index_reactions_on_reactable_and_reactor_and_emoji'
 end
 
 # with uuid id
-create_table :reactions do |t|
+create_table :reactions, id: :uuid do |t|
   t.references :reactable, polymorphic: true, type: :uuid, null: false
   t.references :reactor, polymorphic: true, type: :uuid, null: false
-
-  t.string :emoji, null: false, index: true
-
-  t.timestamps
+  ...
 end
 ```
 

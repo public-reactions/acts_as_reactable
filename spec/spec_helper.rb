@@ -28,10 +28,9 @@ ActiveRecord::Schema.define(version: 1) do
   create_table :reactions do |t|
     t.references :reactable, polymorphic: true, null: false
     t.references :reactor, polymorphic: true, null: false
-
     t.string :emoji, null: false, index: true
-
     t.timestamps
+    t.index [:reactable_type, :reactable_id, :reactor_type, :reactor_id, :emoji], unique: true, name: 'index_reactions_on_reactable_and_reactor_and_emoji'
   end
 end
 
