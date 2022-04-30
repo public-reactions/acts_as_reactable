@@ -1,5 +1,19 @@
 ## [Unreleased]
 
+## [0.4.0](https://github.com/public-reactions/acts_as_reactable/compare/v0.3.0...v0.4.0) (2022-04-30)
+
+
+### Features
+
+* reactable#add_reactions ([#18](https://github.com/public-reactions/acts_as_reactable/issues/18)) ([7320703](https://github.com/public-reactions/acts_as_reactable/commit/73207036cfd4879f620d30ef3777448163e291e7))
+* reactable#remove_reactions ([#20](https://github.com/public-reactions/acts_as_reactable/issues/20)) ([100e7bd](https://github.com/public-reactions/acts_as_reactable/commit/100e7bd8e82b0b33de5a9427f82f6e0de40a7d51))
+
+
+### Bug Fixes
+
+* enforce standard ([d7c252c](https://github.com/public-reactions/acts_as_reactable/commit/d7c252cd6b7fae40e4f652efb4a6d2149fae9fa9))
+* should add unique index for reactable/reactor/emoji ([050dd6c](https://github.com/public-reactions/acts_as_reactable/commit/050dd6ca5865afed80084fccdd237155967d601c))
+
 ## [0.3.0](https://github.com/public-reactions/acts_as_reactable/compare/v0.2.8...v0.3.0) (2022-04-25)
 
 
