@@ -70,10 +70,10 @@ post.remove_reactions(user, "😀")
 post.remove_reactions(user, ["😞", "🙃"])
 ```
 
-### private opinion from one reactor
+### private opinion on reactable from reactor
 
 ```ruby
-reaction = ActsAsReactable::Reaction.find_by(reactable: self, reactor: user)&.emoji
+reactions = ActsAsReactable::Reaction.where(reactable: post, reactor: user)
 ```
 
 ### group, count and sort to get a summary of public opinion
