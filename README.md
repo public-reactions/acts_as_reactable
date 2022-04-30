@@ -63,13 +63,11 @@ post.add_reactions(user, "😀")
 post.add_reactions(user, ["😞", "🙃"])
 ```
 
-### deleting reactions
+### removing reactions
 
 ```ruby
-post.destroy_reaction_from(user) # returns value like #destroy in ActiveRecord
-
-# #update_reaction_from with a nil reaction also delete the reaction
-post.update_reaction_from(user)
+post.remove_reactions(user, "😀")
+post.remove_reactions(user, ["😞", "🙃"])
 ```
 
 ### private opinion from one reactor
