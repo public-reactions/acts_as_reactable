@@ -15,7 +15,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
     $ gem install acts_as_reactable
 
-## Usage
+## Preparations
 
 ### 1. create the Reaction model
 
@@ -54,10 +54,13 @@ class User < ApplicationRecord
 end
 ```
 
-### 3. creating/updating reactions
+## Usage
+
+### adding/updating reactions
 
 ```ruby
-reaction = post.update_reaction_from(user, "😀")
+post.add_reactions(user, "😀")
+post.add_reactions(user, ["😞", "🙃"])
 ```
 
 ### removing reactions
@@ -67,13 +70,13 @@ post.remove_reactions(user, "😀")
 post.remove_reactions(user, ["😞", "🙃"])
 ```
 
-### 5. private opinion from one reactor
+### private opinion from one reactor
 
 ```ruby
 reaction = ActsAsReactable::Reaction.find_by(reactable: self, reactor: user)&.emoji
 ```
 
-### 6. group, count and sort to get a summary of public opinion
+### group, count and sort to get a summary of public opinion
 
 ```ruby
 ActsAsReactable::Reaction.where(reactable: reactor).group(:emoji).order('count_id DESC').count(:id)
