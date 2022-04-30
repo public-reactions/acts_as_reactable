@@ -22,7 +22,7 @@ RSpec.describe ActsAsReactable::Reactable do
     it "ignores invalid emoji" do
       expect {
         post.add_reactions(user, %w[🔴 🟡 "A"])
-        # NOTE using id not being nil to check if the reaction was created
+        # NOTE using id not being nil to filter invalid reactions
         expect(post.reactions.where.not(id: nil).map(&:emoji)).to eq(%w[🔴 🟡])
       }.to change(ActsAsReactable::Reaction, :count).by(2)
     end
