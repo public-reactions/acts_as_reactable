@@ -66,7 +66,6 @@ module ActsAsReactable
 
           self
         end
-
       end
     end
   end
