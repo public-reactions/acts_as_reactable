@@ -28,6 +28,28 @@ module ActsAsReactable
           reaction = reactions.where({reactor: reactor, emoji: emoji}).first_or_create
           reaction
         end
+
+        define_method :add_reactions do |reactor, emoji_or_list = nil|
+          return unless emoji_or_list
+
+          emojis =  if emoji_or_list.kind_of?(Array)
+                      emoji_or_list
+                    else
+                      [emoji_or_list]
+                    end
+
+          # TODO performance
+          # optimize by using a single query
+          emojis
+            .compact
+            .uniq
+            .each do |emoji|
+              reaction = reactions.find_or_create_by(reactor: reactor, emoji: emoji)
+              reaction.save unless reaction.persisted?
+            end
+
+          self
+        end
       end
     end
   end
