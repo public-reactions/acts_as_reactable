@@ -28,6 +28,22 @@ module ActsAsReactable
           reaction = reactions.where({reactor: reactor, emoji: emoji}).first_or_create
           reaction
         end
+
+        define_method :remove_reactions do |reactor, emoji_or_list = nil|
+          return unless emoji_or_list
+
+          emojis =  if emoji_or_list.is_a?(Array)
+                      emoji_or_list
+                    else
+                      [emoji_or_list]
+                    end
+
+          reactions
+            .where(reactor: reactor, emoji: emojis.compact.uniq)
+            .destroy_all
+
+          self
+        end
       end
     end
   end
