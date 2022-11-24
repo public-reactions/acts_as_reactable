@@ -25,7 +25,7 @@ jobs:
         bundler-cache: true
     - name: Run the default task
       run: bundle exec rake
-    - uses: codecov/codecov-action@v2
+    - uses: codecov/codecov-action@v3
       with:
         # token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
         files: ./coverage/coverage.xml
